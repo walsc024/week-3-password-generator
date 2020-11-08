@@ -26,7 +26,21 @@ function generatePassword() {
   var lowerCaseOptions = "abcdefghijklmnopqrstuvwxyz"; 
   var numberOptions = "1234567890";
   var specialCharOptions = "!@£$%^&*()";
+
+  passwordToReturn = '';
+
+  
+  if(upperCase === true){
+    passwordToReturn += upperCaseOptions[Math.floor(Math.random() * 26)]; 
+  }
+
+  if(lowerCase === true){
+    passwordToReturn += lowerCaseOptions[Math.floor(Math.random() * 26)]; 
+  }
  
+
+
+  return passwordToReturn
 }
 
 // Write password to the #password input
