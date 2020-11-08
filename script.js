@@ -21,6 +21,11 @@ function generatePassword() {
     alert('Please select a number greater than 7 but less than 129');
     return ""; 
   }
+
+  var upperCaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  var lowerCaseOptions = "abcdefghijklmnopqrstuvwxyz"; 
+  var numberOptions = "1234567890";
+  var specialCharOptions = "!@£$%^&*()";
  
 }
 
