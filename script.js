@@ -43,6 +43,17 @@ function generatePassword() {
     passwordToReturn += lowerCaseOptions[Math.floor(Math.random() * 26)]; 
     passwordCharactersToChooseFrom += lowerCaseOptions;
   }
+
+  if(specialChar=== true){
+    passwordToReturn += specialCharOptions[Math.floor(Math.random() * specialCharOptions.length)]; 
+    passwordCharactersToChooseFrom += specialCharOptions;
+  }
+
+  if(numbers=== true){
+    passwordToReturn += numberOptions[Math.floor(Math.random() * numberOptions.length)]; 
+    passwordCharactersToChooseFrom += numberOptions;
+  }
+  
  
   //while loop to fill up to the requested length using the string containing all possible characters
   while(passwordToReturn.length < lengthPasswordNumber){
