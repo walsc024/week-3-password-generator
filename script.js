@@ -21,24 +21,33 @@ function generatePassword() {
     alert('Please select a number greater than 7 but less than 129');
     return ""; 
   }
-
+  //Declareing variables containing all possible characters we could add
   var upperCaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
   var lowerCaseOptions = "abcdefghijklmnopqrstuvwxyz"; 
   var numberOptions = "1234567890";
   var specialCharOptions = "!@£$%^&*()";
-
+  //Initialising empty string for the final password
   passwordToReturn = '';
+  //Iniitalising an empty string to store all characters which can be used to fill the length requested
+  passwordCharactersToChooseFrom = '';
 
-  
+  //Checks for what characters are requested 
   if(upperCase === true){
+    //Add a single random charatcer to final password string
     passwordToReturn += upperCaseOptions[Math.floor(Math.random() * 26)]; 
+    //Add all possible from this type to the string of charatcers to fill length
+    passwordCharactersToChooseFrom += upperCaseOptions;
   }
 
   if(lowerCase === true){
     passwordToReturn += lowerCaseOptions[Math.floor(Math.random() * 26)]; 
+    passwordCharactersToChooseFrom += lowerCaseOptions;
   }
  
-
+  //while loop to fill up to the requested length using the string containing all possible characters
+  while(passwordToReturn.length < lengthPasswordNumber){
+    passwordToReturn += passwordCharactersToChooseFrom[Math.floor(Math.random() * passwordCharactersToChooseFrom.length)]; 
+  }
 
   return passwordToReturn
 }
