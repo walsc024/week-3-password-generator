@@ -4,7 +4,15 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var upperCase = confirm('Do you want Upper Case Letters?');
   var lowerCase = confirm('Do you want Lower Case?'); 
+  var specialChar = confirm("Do you want special characters?");
+  var numbers = confirm('Do you want numbers?');
 
+  if (upperCase === false && lowerCase === false && specialChar === false && numbers === false){
+   alert('Please select at least one type of character');
+   return ""; 
+  }
+
+ 
 }
 
 // Write password to the #password input
